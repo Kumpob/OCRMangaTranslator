@@ -108,7 +108,6 @@ def load_json(path):
 
         block["translated_content"] = en_text
 
-        # 🔥 ADD BOTH SIDES TO HISTORY
         conversation_history.append({
             "role": "user",
             "content": jp_text
