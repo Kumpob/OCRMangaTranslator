@@ -1,4 +1,4 @@
-paddleocr
+paddleocr[doc-parser]
 paddlepaddle==3.2.2
 paddlex
 opencv-contrib-python
