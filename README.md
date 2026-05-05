@@ -10,12 +10,12 @@ The project processes images in three sequential steps:
 Input Images (PNG)  →  [1. OCR]  →  JSON Results  →  [2. Translate]  →  Translated JSON  →  [3. Draw]  →  Final Images
 ```
 
-*Example 1:*
+*Example 1: From Japanese to English*
 
 ![Example Image](./exampleIMG.png)
 > Disclaimer: This image shows the text after manual corrections. The OCR failed to detect 1 in 16 and only recognized 6, so I edited it.
 
-*Example 2:*
+*Example 2: From Chinese to English*
 
 ![Example Chinese](./exampleCh.png)
 
