@@ -18,7 +18,7 @@ Uses **PaddleOCR** (`PaddleOCRVL`) to detect and extract Japanese text from PNG 
 
 ### Step 2: Translate — `translate.py`
 Sends extracted Japanese text to an LLM API (via OpenRouter) for English translation. Supports:
-- **Conversation history** — maintains context across text blocks within an image for consistent translations
+- **Conversation history** — maintains context across text blocks within the folder for consistent translations
 - **Dictionary lookup** — applies custom translations from `note.txt` before sending to the LLM
 - **Retry logic** — retries up to 3 times if the translation doesn't start with ASCII characters
 - Change Model to get better result
@@ -128,7 +128,6 @@ Converts images from various formats (JPG, BMP, TIFF, WebP, GIF) to PNG. Useful 
 ```bash
 python convert_to_png.py "input_folder" "output_folder"
 ```
-(Edit the script to set your input/output folders.)
 
 ### `checkfont.py`
 Lists all available TrueType/OpenType fonts in the Windows Fonts directory.
@@ -138,6 +137,7 @@ python checkfont.py
 
 ## Output Structure
 
+*Example*
 ```
 images/              ← Input PNG images
 ├── ex1.png

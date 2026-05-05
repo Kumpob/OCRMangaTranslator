@@ -91,18 +91,12 @@ def apply_dictionary(text, mapping):
         print(f"After dictionary: {text}")
     return text
 
-def load_json(path):
+def load_json(path, conversation_history, dictionary):
     print(f"Translating {path}...")
     with open(path, "r", encoding="utf-8") as f:
         data= json.load(f)
     print(f"Loaded: {path}")
-    conversation_history = [
-    {
-        "role": "system",
-        "content": PROMPT
-    }
-    ]
-    dictionary = load_dictionary()
+    
     for block in data["parsing_res_list"]:
         jp_text = block["block_content"]
         processed_text = apply_dictionary(jp_text, dictionary)
@@ -130,9 +124,17 @@ def load_json(path):
 
 
 def run_all_translate(path):
+    conversation_history = [
+    {
+        "role": "system",
+        "content": PROMPT
+    }
+    ]
+    dictionary = load_dictionary()
+
     for file in os.listdir(path):
         if file.endswith(".json") and not file.endswith("_translated.json"):
             print(f"Processing {file}")
-            load_json(f"{path}/{file}")
+            load_json(f"{path}/{file}", conversation_history, dictionary)
 
 # run_all_translate("output/")
