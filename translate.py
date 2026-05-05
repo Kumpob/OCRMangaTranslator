@@ -46,6 +46,9 @@ def translate(text, history):
     }
 
     res = requests.post(URL, headers=HEADERS, json=payload)
+    if res.status_code != 200:
+        print(f"API error: {res.status_code} {res.text}")
+        return "[translation error]"
     output = res.json()["choices"][0]["message"]["content"]
 
     return output
