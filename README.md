@@ -117,9 +117,14 @@ Example:
 カカロット=Kakarot
 悟空=Goku
 ベジータ=Vegeta
+ミスター・サタン=Hercule
 ```
 
 The dictionary is applied before sending text to the LLM, ensuring proper nouns and preferred terms are preserved.
+
+*Example*
+
+![exampleNote](./exampleNote.png)
 
 ## Utility Scripts
 
