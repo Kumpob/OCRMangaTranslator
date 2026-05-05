@@ -10,8 +10,14 @@ The project processes images in three sequential steps:
 Input Images (PNG)  →  [1. OCR]  →  JSON Results  →  [2. Translate]  →  Translated JSON  →  [3. Draw]  →  Final Images
 ```
 
+*Example 1:*
+
 ![Example Image](./exampleIMG.png)
 > Disclaimer: This image shows the text after manual corrections. The OCR failed to detect 1 in 16 and only recognized 6, so I edited it.
+
+*Example 2:*
+
+![Example Chinese](./exampleChinese.png)
 
 ### Step 1: OCR — `run_ocr.py`
 Uses **PaddleOCR** (`PaddleOCRVL`) to detect and extract Japanese text from PNG images. Results are saved as JSON files containing text blocks with bounding box coordinates.
