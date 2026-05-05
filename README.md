@@ -20,7 +20,7 @@ Sends extracted Japanese text to an LLM API (via OpenRouter) for English transla
 - **Conversation history** — maintains context across text blocks within an image for consistent translations
 - **Dictionary lookup** — applies custom translations from `note.txt` before sending to the LLM
 - **Retry logic** — retries up to 3 times if the translation doesn't start with ASCII characters
-- 
+- Change Model to get better result
 - Translated results are saved alongside the original JSON as `*_translated.json`
 
 ### Step 3: Draw — `draw.py`
