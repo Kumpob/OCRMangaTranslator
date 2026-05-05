@@ -125,7 +125,7 @@ The dictionary is applied before sending text to the LLM, ensuring proper nouns 
 ### `convert_to_png.py`
 Converts images from various formats (JPG, BMP, TIFF, WebP, GIF) to PNG. Useful for preparing non-PNG images for the pipeline.
 ```bash
-python convert_to_png.py "input_folder" ""
+python convert_to_png.py "input_folder" "put_folder"
 ```
 (Edit the script to set your input/output folders.)
 
