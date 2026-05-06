@@ -14,10 +14,12 @@ Input Images (PNG)  →  [1. OCR]  →  JSON Results  →  [2. Translate]  →  
 
 ![Example Image](./exampleIMG.png)
 > Disclaimer: This image shows the text after manual corrections. The OCR failed to detect 1 in 16 and only recognized 6, so I edited it.
+> Source: [Hanayume](https://hanayume.com/series/c8751169f185f)
 
 *Example 2: From Chinese to English*
 
 ![Example Chinese](./exampleCh.png)
+> Source: [Internet Archive](https://archive.org/details/06057482.cn)
 
 ### Step 1: OCR — `run_ocr.py`
 Uses **PaddleOCR** (`PaddleOCRVL`) to detect and extract Japanese (or any language PaddleOCRVL supports) text from PNG images. Results are saved as JSON files containing text blocks with bounding box coordinates.
