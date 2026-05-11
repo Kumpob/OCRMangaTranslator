@@ -2,6 +2,8 @@
 
 A pipeline for OCR-ing foreign (e.g. Japanese, Chinese) text from manga/comic pages or images, translating it to English via an AI LLM API, and overlaying the translated text back onto the images.
 
+> **⚠️ Disclaimer:** This tool is intended for personal use only. Please support the official release of any manga or comic you translate — buy volumes, subscribe to official platforms, or support the artist directly. Do not use this tool to publish, distribute, or profit from translated content without permission from the original creators. Respect the work of the artists and translators behind every series.
+
 ## Pipeline Overview
 
 The project processes images in three sequential steps:
