@@ -116,7 +116,11 @@ python -c "from draw import run_all_draw; run_all_draw('output', 'images', 'fina
 
 ### Font Configuration
 
-By default, `draw.py` uses **Comic Neue Bold Italic** (`ComicNeue-BoldItalic.ttf`), an open-source font licensed under the [OFL](https://openfontlicense.org/). Download it from [Google Fonts](https://fonts.google.com/specimen/Comic+Neue) and place `ComicNeue-BoldItalic.ttf` in the fonts folder. To use a different font, edit the `get_font()` function in `draw.py`.
+The project uses a pre-built merged font (`fonts/Merge/ComicNeueSymbols-BoldItalic.ttf`) that combines [Comic Neue Bold Italic](https://fonts.google.com/specimen/Comic+Neue) with [Noto Sans Symbols 2](https://fonts.google.com/noto/specimen/Noto+Sans+Symbols+2), so symbol characters like ♡ ★ ✿ render correctly without a separate fallback font. It is already included in the repo — no extra steps needed.
+
+To use a different base font, edit the `COMIC` and `NOTO` variables at the top of `merge_fonts.py` to point to your chosen `.ttf` files, then re-run it to regenerate the merged font. Alternatively, edit `get_font()` in `draw.py` to point directly to any `.ttf` of your choice.
+
+Both Comic Neue and Noto Sans Symbols 2 are licensed under the [Open Font License (OFL)](https://openfontlicense.org/). A copy of the license is included in each font's folder at `fonts/ComicNeue/` and `fonts/NotoSans/` respectively.
 
 ### Dictionary (`note.txt`)
 
@@ -154,6 +158,12 @@ python checkfont.py
 ```
 > Windows Fonts can also be check at [Microsoft Typography](https://docs.microsoft.com/en-us/typography/fonts/windows_10_font_list)
 
+### `merge_fonts.py`
+Merges Comic Neue Bold Italic with Noto Sans Symbols 2 to produce the bundled `ComicNeueSymbols-BoldItalic.ttf`. You only need to run this if you want to regenerate the font after changing the `COMIC` or `NOTO` paths at the top of the script.
+```python
+python merge_fonts.py
+```
+
 ## Output Structure
 
 ```
@@ -178,7 +188,7 @@ final/               ← Final images with translated text overlaid
 ## Notes
 
 - **Image format:** Only PNG images are processed. Use `convert_to_png.py` to convert other formats first.
-- **Font:** To use a different font, edit `get_font()` in `draw.py`.
+- **Font:** The merged font is bundled at `fonts/Merge/ComicNeueSymbols-BoldItalic.ttf`. To use a different font, edit `get_font()` in `draw.py`.
 - **OCR skipping:** If a JSON result already exists for an image, OCR is skipped for that file. Delete the JSON to re-run OCR on it.
 - **Translation context:** Conversation history is shared across all files processed in a single run. Running files in a consistent order will produce more coherent translations.
 - This project depends on [PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR), licensed under the Apache License 2.0.

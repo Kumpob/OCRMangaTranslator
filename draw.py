@@ -7,6 +7,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 def load_font(font_size):
     possible_fonts = [
+        "fonts/Merge/ComicNeueSymbols-BoldItalic.ttf"
         "fonts/ComicNeue/ComicNeue-BoldItalic.ttf",
         "fonts/NotoSans/NotoSansSymbols2-Regular.ttf",
         "DejaVuSans.ttf",
@@ -24,17 +25,21 @@ def load_font(font_size):
     return ImageFont.load_default()
 
 def get_font(text, font_size):
-    symbol_chars = set("♡♥❤★☆✿✧")
 
-    if any(ch in symbol_chars for ch in text):
-        try:
-            return ImageFont.truetype("fonts/NotoSans/NotoSansSymbols2-Regular.ttf", font_size)
-        except:
-            pass
+    # symbol_chars = set("♡♥❤★☆✿✧")
+
+    # if any(ch in symbol_chars for ch in text):
+    #     try:
+    #         return ImageFont.truetype("fonts/NotoSans/NotoSansSymbols2-Regular.ttf", font_size)
+    #     except:
+    #         pass
         
-    # or use C:/Windows/Fonts/comicz.ttf to see more Windows fonts use checkfont.py or https://docs.microsoft.com/en-us/typography/fonts/windows_10_font_list
-    # or download more fonts from Google Fonts https://fonts.google.com/ and put in fonts/ folder 
-    return ImageFont.truetype("fonts/ComicNeue/ComicNeue-BoldItalic.ttf", font_size)
+    # # or use C:/Windows/Fonts/comicz.ttf to see more Windows fonts use checkfont.py or https://docs.microsoft.com/en-us/typography/fonts/windows_10_font_list
+    # # or download more fonts from Google Fonts https://fonts.google.com/ and put in fonts/ folder 
+    # return ImageFont.truetype("fonts/ComicNeue/ComicNeue-BoldItalic.ttf", font_size)
+    
+    return ImageFont.truetype("fonts/Merge/ComicNeueSymbols-BoldItalic.ttf", font_size)
+
 
 
 def normalize_text(text):
