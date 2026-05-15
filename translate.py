@@ -2,7 +2,7 @@ import json
 import os
 import requests
 from dotenv import load_dotenv
-load_dotenv()
+load_dotenv(override=True)
 
 API_KEY = os.getenv("API_KEY")
 URL = os.getenv("URL")
@@ -23,7 +23,7 @@ def is_valid_translation(text):
         return False
 
     # remove leading spaces / quotes
-    cleaned = text.strip().lstrip("\"'“”")
+    cleaned = text.strip().lstrip("\"'“”…")
 
     if not cleaned:
         return False
@@ -63,7 +63,7 @@ def translate_with_retry(text, history, max_retries=3):
 
         print(f"Retrying ({attempt+1}/{max_retries}) → invalid: {result}")
 
-    return "[translation failed]"
+    return text
 
 def load_dictionary(path="note.txt"):
     mapping = {}
